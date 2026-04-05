@@ -1,15 +1,22 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { useEffect } from 'react';
 import Navbar from "./components/Navbar";
+import Sections from "./components/Sections";
 import Footer from "./components/Footer";
-import AppRoutes from "./routes/AppRoutes";
 
 function App() {
+  useEffect(() => {
+    // Set light mode by default
+    document.documentElement.classList.remove('dark');
+  }, []);
+
   return (
-    <Router>
+    <div>
       <Navbar />
-      <AppRoutes />
+      <main>
+        <Sections />
+      </main>
       <Footer />
-    </Router>
+    </div>
   );
 }
 
